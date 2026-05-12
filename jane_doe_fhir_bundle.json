@@ -1,0 +1,780 @@
+{
+  "resourceType": "Bundle",
+  "type": "transaction",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:2c87eed4-65cb-4e62-b7e2-add43ad7e07d",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "2c87eed4-65cb-4e62-b7e2-add43ad7e07d",
+        "identifier": [
+          {
+            "system": "https://po-fastmcp/synthetic",
+            "value": "2c87eed4-65cb-4e62-b7e2-add43ad7e07d"
+          }
+        ],
+        "name": [
+          {
+            "use": "official",
+            "family": "Doe",
+            "given": [
+              "Jane"
+            ]
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1950-02-14",
+        "address": [
+          {
+            "city": "Newark",
+            "state": "NJ",
+            "country": "US"
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Patient",
+        "ifNoneExist": "identifier=https://po-fastmcp/synthetic|2c87eed4-65cb-4e62-b7e2-add43ad7e07d"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:52d22188-8cf7-46ec-8c9b-72c6f6f9c99d",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "52d22188-8cf7-46ec-8c9b-72c6f6f9c99d",
+        "identifier": [
+          {
+            "system": "https://po-fastmcp/synthetic",
+            "value": "52d22188-8cf7-46ec-8c9b-72c6f6f9c99d"
+          }
+        ],
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "427003000",
+              "display": "Atrial fibrillation"
+            }
+          ],
+          "text": "Atrial fibrillation (new onset)"
+        },
+        "subject": {
+          "reference": "urn:uuid:2c87eed4-65cb-4e62-b7e2-add43ad7e07d"
+        },
+        "onsetDateTime": "2026-04-01"
+      },
+      "request": {
+        "method": "POST",
+        "url": "Condition",
+        "ifNoneExist": "identifier=https://po-fastmcp/synthetic|52d22188-8cf7-46ec-8c9b-72c6f6f9c99d"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:f9b59279-dcb1-4758-a8d9-bb4a5017f7a0",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "f9b59279-dcb1-4758-a8d9-bb4a5017f7a0",
+        "identifier": [
+          {
+            "system": "https://po-fastmcp/synthetic",
+            "value": "f9b59279-dcb1-4758-a8d9-bb4a5017f7a0"
+          }
+        ],
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "709044004",
+              "display": "Chronic kidney disease stage 3b"
+            }
+          ],
+          "text": "CKD Stage 3b"
+        },
+        "subject": {
+          "reference": "urn:uuid:2c87eed4-65cb-4e62-b7e2-add43ad7e07d"
+        },
+        "onsetDateTime": "2022-06-01"
+      },
+      "request": {
+        "method": "POST",
+        "url": "Condition",
+        "ifNoneExist": "identifier=https://po-fastmcp/synthetic|f9b59279-dcb1-4758-a8d9-bb4a5017f7a0"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:7e5e83a8-2570-45a5-9050-362d621e43d4",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "7e5e83a8-2570-45a5-9050-362d621e43d4",
+        "identifier": [
+          {
+            "system": "https://po-fastmcp/synthetic",
+            "value": "7e5e83a8-2570-45a5-9050-362d621e43d4"
+          }
+        ],
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "44054006",
+              "display": "Type 2 diabetes mellitus"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:2c87eed4-65cb-4e62-b7e2-add43ad7e07d"
+        },
+        "onsetDateTime": "2018-03-01"
+      },
+      "request": {
+        "method": "POST",
+        "url": "Condition",
+        "ifNoneExist": "identifier=https://po-fastmcp/synthetic|7e5e83a8-2570-45a5-9050-362d621e43d4"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:dd06086c-bfdc-4496-ab3d-902f148f2d8f",
+      "resource": {
+        "resourceType": "Condition",
+        "id": "dd06086c-bfdc-4496-ab3d-902f148f2d8f",
+        "identifier": [
+          {
+            "system": "https://po-fastmcp/synthetic",
+            "value": "dd06086c-bfdc-4496-ab3d-902f148f2d8f"
+          }
+        ],
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "73211009",
+              "display": "Essential hypertension"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "urn:uuid:2c87eed4-65cb-4e62-b7e2-add43ad7e07d"
+        },
+        "onsetDateTime": "2015-01-01"
+      },
+      "request": {
+        "method": "POST",
+        "url": "Condition",
+        "ifNoneExist": "identifier=https://po-fastmcp/synthetic|dd06086c-bfdc-4496-ab3d-902f148f2d8f"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:28393580-1fa5-43d7-a79f-0c958e5e7e29",
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "28393580-1fa5-43d7-a79f-0c958e5e7e29",
+        "identifier": [
+          {
+            "system": "https://po-fastmcp/synthetic",
+            "value": "28393580-1fa5-43d7-a79f-0c958e5e7e29"
+          }
+        ],
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "860975",
+              "display": "Metformin"
+            }
+          ],
+          "text": "Metformin 1000 mg oral tablet"
+        },
+        "subject": {
+          "reference": "urn:uuid:2c87eed4-65cb-4e62-b7e2-add43ad7e07d"
+        },
+        "dosageInstruction": [
+          {
+            "text": "1000 mg twice daily by mouth"
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "MedicationRequest",
+        "ifNoneExist": "identifier=https://po-fastmcp/synthetic|28393580-1fa5-43d7-a79f-0c958e5e7e29"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:5b5902c5-19cf-4b51-b6df-236a02ced0e7",
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "5b5902c5-19cf-4b51-b6df-236a02ced0e7",
+        "identifier": [
+          {
+            "system": "https://po-fastmcp/synthetic",
+            "value": "5b5902c5-19cf-4b51-b6df-236a02ced0e7"
+          }
+        ],
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "703",
+              "display": "Amiodarone"
+            }
+          ],
+          "text": "Amiodarone 200 mg oral tablet"
+        },
+        "subject": {
+          "reference": "urn:uuid:2c87eed4-65cb-4e62-b7e2-add43ad7e07d"
+        },
+        "dosageInstruction": [
+          {
+            "text": "200 mg once daily by mouth"
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "MedicationRequest",
+        "ifNoneExist": "identifier=https://po-fastmcp/synthetic|5b5902c5-19cf-4b51-b6df-236a02ced0e7"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:a8ff12cd-f7eb-4cea-bcdc-cbcddd1df97f",
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "a8ff12cd-f7eb-4cea-bcdc-cbcddd1df97f",
+        "identifier": [
+          {
+            "system": "https://po-fastmcp/synthetic",
+            "value": "a8ff12cd-f7eb-4cea-bcdc-cbcddd1df97f"
+          }
+        ],
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "29046",
+              "display": "Lisinopril"
+            }
+          ],
+          "text": "Lisinopril 10 mg oral tablet"
+        },
+        "subject": {
+          "reference": "urn:uuid:2c87eed4-65cb-4e62-b7e2-add43ad7e07d"
+        },
+        "dosageInstruction": [
+          {
+            "text": "10 mg once daily by mouth"
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "MedicationRequest",
+        "ifNoneExist": "identifier=https://po-fastmcp/synthetic|a8ff12cd-f7eb-4cea-bcdc-cbcddd1df97f"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:6f1310a6-8a4c-490c-8e09-bf57f80fba4e",
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "6f1310a6-8a4c-490c-8e09-bf57f80fba4e",
+        "identifier": [
+          {
+            "system": "https://po-fastmcp/synthetic",
+            "value": "6f1310a6-8a4c-490c-8e09-bf57f80fba4e"
+          }
+        ],
+        "status": "active",
+        "intent": "order",
+        "medicationCodeableConcept": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "83367",
+              "display": "Atorvastatin"
+            }
+          ],
+          "text": "Atorvastatin 40 mg oral tablet"
+        },
+        "subject": {
+          "reference": "urn:uuid:2c87eed4-65cb-4e62-b7e2-add43ad7e07d"
+        },
+        "dosageInstruction": [
+          {
+            "text": "40 mg once daily at bedtime"
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "MedicationRequest",
+        "ifNoneExist": "identifier=https://po-fastmcp/synthetic|6f1310a6-8a4c-490c-8e09-bf57f80fba4e"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:b6c28dea-d88f-4e0a-a6dc-bb41796b5e54",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "b6c28dea-d88f-4e0a-a6dc-bb41796b5e54",
+        "identifier": [
+          {
+            "system": "https://po-fastmcp/synthetic",
+            "value": "b6c28dea-d88f-4e0a-a6dc-bb41796b5e54"
+          }
+        ],
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "33914-3",
+              "display": "Glomerular filtration rate/1.73 sq M.predicted"
+            }
+          ],
+          "text": "eGFR"
+        },
+        "subject": {
+          "reference": "urn:uuid:2c87eed4-65cb-4e62-b7e2-add43ad7e07d"
+        },
+        "effectiveDateTime": "2026-04-15",
+        "valueQuantity": {
+          "value": 38,
+          "unit": "mL/min/1.73m2",
+          "system": "http://unitsofmeasure.org",
+          "code": "mL/min/{1.73_m2}"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "L",
+                "display": "Low"
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation",
+        "ifNoneExist": "identifier=https://po-fastmcp/synthetic|b6c28dea-d88f-4e0a-a6dc-bb41796b5e54"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:f6e7d418-6101-4665-b2b6-5f7cb2ae224b",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "f6e7d418-6101-4665-b2b6-5f7cb2ae224b",
+        "identifier": [
+          {
+            "system": "https://po-fastmcp/synthetic",
+            "value": "f6e7d418-6101-4665-b2b6-5f7cb2ae224b"
+          }
+        ],
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "2160-0",
+              "display": "Creatinine [Mass/volume] in Serum or Plasma"
+            }
+          ],
+          "text": "Serum Creatinine"
+        },
+        "subject": {
+          "reference": "urn:uuid:2c87eed4-65cb-4e62-b7e2-add43ad7e07d"
+        },
+        "effectiveDateTime": "2026-04-15",
+        "valueQuantity": {
+          "value": 1.8,
+          "unit": "mg/dL",
+          "system": "http://unitsofmeasure.org",
+          "code": "mg/dL"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation",
+        "ifNoneExist": "identifier=https://po-fastmcp/synthetic|f6e7d418-6101-4665-b2b6-5f7cb2ae224b"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:d13f545c-2261-4b94-b62c-3769f171ac1a",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "d13f545c-2261-4b94-b62c-3769f171ac1a",
+        "identifier": [
+          {
+            "system": "https://po-fastmcp/synthetic",
+            "value": "d13f545c-2261-4b94-b62c-3769f171ac1a"
+          }
+        ],
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "4548-4",
+              "display": "Hemoglobin A1c/Hemoglobin.total in Blood"
+            }
+          ],
+          "text": "HbA1c"
+        },
+        "subject": {
+          "reference": "urn:uuid:2c87eed4-65cb-4e62-b7e2-add43ad7e07d"
+        },
+        "effectiveDateTime": "2026-04-15",
+        "valueQuantity": {
+          "value": 7.8,
+          "unit": "%",
+          "system": "http://unitsofmeasure.org",
+          "code": "%"
+        },
+        "interpretation": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+                "code": "H",
+                "display": "High"
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation",
+        "ifNoneExist": "identifier=https://po-fastmcp/synthetic|d13f545c-2261-4b94-b62c-3769f171ac1a"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:b9c6d48b-7611-4a0e-b794-fa66a1bf704e",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "b9c6d48b-7611-4a0e-b794-fa66a1bf704e",
+        "identifier": [
+          {
+            "system": "https://po-fastmcp/synthetic",
+            "value": "b9c6d48b-7611-4a0e-b794-fa66a1bf704e"
+          }
+        ],
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "2823-3",
+              "display": "Potassium [Moles/volume] in Serum or Plasma"
+            }
+          ],
+          "text": "Potassium"
+        },
+        "subject": {
+          "reference": "urn:uuid:2c87eed4-65cb-4e62-b7e2-add43ad7e07d"
+        },
+        "effectiveDateTime": "2026-04-15",
+        "valueQuantity": {
+          "value": 4.1,
+          "unit": "mEq/L",
+          "system": "http://unitsofmeasure.org",
+          "code": "meq/L"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation",
+        "ifNoneExist": "identifier=https://po-fastmcp/synthetic|b9c6d48b-7611-4a0e-b794-fa66a1bf704e"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:d6da7b30-febe-4ebf-9ca0-723431a3332e",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "d6da7b30-febe-4ebf-9ca0-723431a3332e",
+        "identifier": [
+          {
+            "system": "https://po-fastmcp/synthetic",
+            "value": "d6da7b30-febe-4ebf-9ca0-723431a3332e"
+          }
+        ],
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "34714-6",
+              "display": "INR in Blood by Coagulation assay"
+            }
+          ],
+          "text": "INR"
+        },
+        "subject": {
+          "reference": "urn:uuid:2c87eed4-65cb-4e62-b7e2-add43ad7e07d"
+        },
+        "effectiveDateTime": "2026-04-01",
+        "valueQuantity": {
+          "value": 1.1,
+          "unit": "INR",
+          "system": "http://unitsofmeasure.org",
+          "code": "{INR}"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation",
+        "ifNoneExist": "identifier=https://po-fastmcp/synthetic|d6da7b30-febe-4ebf-9ca0-723431a3332e"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:6f8b20c1-a5ec-4aa7-a46f-37090b5a6cb4",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "6f8b20c1-a5ec-4aa7-a46f-37090b5a6cb4",
+        "identifier": [
+          {
+            "system": "https://po-fastmcp/synthetic",
+            "value": "6f8b20c1-a5ec-4aa7-a46f-37090b5a6cb4"
+          }
+        ],
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "3016-3",
+              "display": "Thyrotropin [Units/volume] in Serum or Plasma"
+            }
+          ],
+          "text": "TSH"
+        },
+        "subject": {
+          "reference": "urn:uuid:2c87eed4-65cb-4e62-b7e2-add43ad7e07d"
+        },
+        "effectiveDateTime": "2026-03-01",
+        "valueQuantity": {
+          "value": 2.3,
+          "unit": "mIU/L",
+          "system": "http://unitsofmeasure.org",
+          "code": "m[IU]/L"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation",
+        "ifNoneExist": "identifier=https://po-fastmcp/synthetic|6f8b20c1-a5ec-4aa7-a46f-37090b5a6cb4"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:97840f61-5be0-4236-aa7e-81a18679e39a",
+      "resource": {
+        "resourceType": "AllergyIntolerance",
+        "id": "97840f61-5be0-4236-aa7e-81a18679e39a",
+        "identifier": [
+          {
+            "system": "https://po-fastmcp/synthetic",
+            "value": "97840f61-5be0-4236-aa7e-81a18679e39a"
+          }
+        ],
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "type": "allergy",
+        "criticality": "high",
+        "code": {
+          "coding": [
+            {
+              "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+              "code": "7980",
+              "display": "Penicillin"
+            }
+          ]
+        },
+        "patient": {
+          "reference": "urn:uuid:2c87eed4-65cb-4e62-b7e2-add43ad7e07d"
+        },
+        "reaction": [
+          {
+            "manifestation": [
+              {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "39579001",
+                    "display": "Anaphylaxis"
+                  }
+                ]
+              }
+            ],
+            "severity": "severe"
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "AllergyIntolerance",
+        "ifNoneExist": "identifier=https://po-fastmcp/synthetic|97840f61-5be0-4236-aa7e-81a18679e39a"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:c0d96728-b70d-4fa2-b4b7-e7508dc90f94",
+      "resource": {
+        "resourceType": "AllergyIntolerance",
+        "id": "c0d96728-b70d-4fa2-b4b7-e7508dc90f94",
+        "identifier": [
+          {
+            "system": "https://po-fastmcp/synthetic",
+            "value": "c0d96728-b70d-4fa2-b4b7-e7508dc90f94"
+          }
+        ],
+        "clinicalStatus": {
+          "coding": [
+            {
+              "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+              "code": "active"
+            }
+          ]
+        },
+        "type": "allergy",
+        "criticality": "low",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "372687004",
+              "display": "Sulfonamide"
+            }
+          ]
+        },
+        "patient": {
+          "reference": "urn:uuid:2c87eed4-65cb-4e62-b7e2-add43ad7e07d"
+        },
+        "reaction": [
+          {
+            "manifestation": [
+              {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "271807003",
+                    "display": "Skin rash"
+                  }
+                ]
+              }
+            ],
+            "severity": "mild"
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "AllergyIntolerance",
+        "ifNoneExist": "identifier=https://po-fastmcp/synthetic|c0d96728-b70d-4fa2-b4b7-e7508dc90f94"
+      }
+    }
+  ]
+}

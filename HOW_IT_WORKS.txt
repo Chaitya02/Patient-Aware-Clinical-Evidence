@@ -1,0 +1,98 @@
+HOW IT WORKS — Patient-Aware Clinical Evidence MCP
+====================================================
+
+THE BIG PICTURE
+---------------
+A doctor asks a clinical question in Prompt Opinion.
+Instead of getting a generic answer, the AI looks up the ACTUAL patient's
+data and finds REAL published medical research before answering.
+
+
+STEP-BY-STEP FLOW
+-----------------
+
+1. DOCTOR ASKS A QUESTION
+   "Should this patient start anticoagulation for atrial fibrillation?"
+
+2. PROMPT OPINION READS THE PATIENT CONTEXT (FHIR/SHARP)
+   Prompt Opinion automatically knows which patient is active (Jane Doe).
+   It forwards her patient ID to every tool call — this is called SHARP.
+   Jane Doe's data lives in a FHIR store (standard healthcare data format).
+
+3. ORCHESTRATOR DECIDES WHAT TO DO
+   The Prompt Opinion AI (Gemini 3.1 Flash Lite) sees the question
+   and decides to call our MCP tool: answer_clinical_question
+
+4. OUR TOOL FETCHES THE PATIENT PROFILE  [get_patient_context]
+   Using Jane Doe's patient ID, the tool retrieves:
+   - Age, sex, weight
+   - Active conditions (AFib, CKD stage 3b, Diabetes, Hypertension)
+   - Current medications (Metformin, Amiodarone, Lisinopril, Atorvastatin)
+   - Recent lab results (eGFR 38, Creatinine 1.8, HbA1c 7.8, INR 1.1)
+   - Allergies (Penicillin, Sulfa drugs)
+
+5. THE QUESTION IS REFORMULATED FOR PUBMED  [Gemini inside the tool]
+   The raw question gets rewritten as a medical search query.
+   Example: "atrial fibrillation anticoagulation CKD elderly DOAC"
+   This is based on the PICO framework (Population, Intervention,
+   Comparison, Outcome) used by clinical librarians.
+
+6. PUBMED IS SEARCHED FOR REAL STUDIES  [search_pubmed]
+   The tool queries PubMed (the world's largest medical research database)
+   using the reformulated query and fetches up to 8 peer-reviewed articles.
+   Each article has a title, abstract, journal, year, and PMID.
+
+7. THE ANSWER IS SYNTHESIZED FOR THIS SPECIFIC PATIENT  [Gemini inside the tool]
+   Gemini reads the research articles AND Jane Doe's profile together.
+   It answers the question specifically for her — for example:
+   - Her eGFR of 38 means standard DOAC doses need adjustment
+   - Her weight of 52 kg triggers apixaban dose reduction criteria
+   - Her amiodarone raises DOAC blood levels (P-gp inhibition)
+   - Her CHA2DS2-VASc score of 5 means anticoagulation is strongly indicated
+   Every claim is tied to a real PubMed article ID (PMID).
+
+8. THE ANSWER IS RETURNED WITH AN EVIDENCE GRADE
+   The final answer includes:
+   - A patient-specific recommendation with citations [1][2][3]
+   - An evidence grade: HIGH / MODERATE / LOW / INSUFFICIENT
+   - Patient relevance notes explaining how her data changes the answer
+   - A disclaimer that this is decision support, not a clinical decision
+
+
+WHY THIS IS DIFFERENT FROM JUST ASKING AN AI
+---------------------------------------------
+Generic AI:  "For atrial fibrillation, apixaban 5mg twice daily is typical."
+
+Our tool:    "For Jane Doe specifically — given her weight (52 kg) and
+              creatinine (1.8 mg/dL), she meets 2 of 3 dose-reduction
+              criteria, so apixaban 2.5mg BID is the correct dose.
+              Her amiodarone further supports this choice over other DOACs
+              due to P-gp inhibition raising plasma levels. [PMID 38033089]"
+
+The answer changes based on the actual patient. That is the point.
+
+
+THE FILES THAT MAKE THIS WORK
+------------------------------
+main.py                  — Starts the MCP server, declares FHIR scopes
+tools/fhir_patient.py    — Fetches patient data from FHIR (or demo patient)
+tools/clinical_qa.py     — The main tool: PICO + PubMed + synthesis in one call
+tools/pubmed_search.py   — Queries PubMed E-utilities API
+tools/synthesize.py      — Standalone synthesis tool (used separately if needed)
+tools/arxiv_search.py    — Searches arXiv for preprints (bonus tool)
+jane_doe_fhir_bundle.json — Synthetic patient data used for the demo
+
+
+DEMO PATIENT — JANE DOE (SYNTHETIC)
+-------------------------------------
+76-year-old woman, Newark NJ
+New-onset Atrial Fibrillation (April 2026)
+Chronic Kidney Disease Stage 3b — eGFR 38 (LOW)
+Type 2 Diabetes — HbA1c 7.8% (HIGH)
+Essential Hypertension
+
+Medications: Metformin, Amiodarone, Lisinopril, Atorvastatin
+Allergies: Penicillin (anaphylaxis), Sulfa drugs (rash)
+
+This profile was designed to be clinically complex so that the tool
+produces meaningfully different answers than generic AI would.
