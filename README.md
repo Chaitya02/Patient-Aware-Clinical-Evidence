@@ -6,7 +6,7 @@ Built with [FastMCP](https://gofastmcp.com) and powered by Google Gemini, PubMed
 
 ## Architecture
 
-![Architecture diagram showing Prompt Opinion → Gemini Orchestrator → specialist agents (Clinical Q&A, Drug Interaction, Renal Dosing) → MCP tools → FHIR, PubMed, and OpenFDA APIs](<img width="721" height="759" alt="Screenshot 2026-05-11 at 10 08 38 PM" src="https://github.com/user-attachments/assets/c600a129-0c97-41da-b446-ab1e3161575f" />)
+<img width="721" height="759" alt="Screenshot 2026-05-11 at 10 08 38 PM" src="https://github.com/user-attachments/assets/653d8ed9-5044-4361-b97b-3fd07a187890" />
 
 The Gemini orchestrator routes each clinical question to the right specialist agent via A2A protocol. Each agent calls atomic MCP tools that fetch live patient data and real published evidence before synthesizing a patient-specific answer.
 
